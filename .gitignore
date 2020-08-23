@@ -115,3 +115,6 @@ dist
 .yarn/install-state.gz
 .pnp.*
 .git
+
+/node_modules
+/package-lock.json

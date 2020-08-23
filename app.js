@@ -14,7 +14,7 @@ app.set('view engine', 'ejs');
 // database connection
 const dbURI = 'mongodb+srv://mouhsineelachbi:017100688@cluster0.oa8h1.mongodb.net/nodejwt';
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true })
-  .then((result) => app.listen(3000))
+  .then((result) => {app.listen(3000); console.log('Listening on port 3000');})
   .catch((err) => console.log(err));
 
 // routes
