@@ -9,12 +9,19 @@
     <label for="password">Password</label>
         <input type="password" name="password" required/>
         <div class="password error"></div>
-    
-    <button>Sign up</button>
+
+    <button>Sign up</button><div class="user created"></div>
 </form>
 
 <script>
     const form = document.querySelector('form');
+    const emailError = document.querySelector('.email.error');
+    const passwordError = document.querySelector('.password.error');
+    const userCreated = document.querySelector('.user.created');
+
+    // reset error containers
+    emailError.textContent = "";
+    passwordError.textContent = "";
 
     form.addEventListener('submit', async (e)=>{
         e.preventDefault(); // prevent refreching
@@ -29,7 +36,16 @@
                 body: JSON.stringify({email: email, password: password}), // or just call JSON.singify({email, password}) because they have the same name
                 headers : {'content-Type': 'Application/json'}
             })
-
+            const data = await res.json();
+            console.log(data);
+            if(data){
+                emailError.textContent = data.email;
+                passwordError.textContent = data.password;
+                if(data.user){
+                    userCreated.textContent = 'User has been created';
+                    location.assign('/');
+                }
+            }
         }catch(err){
             console.log(err);
         }
