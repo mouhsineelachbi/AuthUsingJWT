@@ -36,7 +36,7 @@ const handleErrors = (err) => {
 // Creating Tokens
 const maxAge = 3*24*60*60 // 3 days in seconds
 const createToken = (id)=>{
-    return jwt.sign({ id }, 'this is the secret', {  // { id } is the payload and the secret is what after, and then the options
+    return jwt.sign({ id }, 'this is the secret', {  // { id } is the payload(data) and the secret (for signature)is what after, and then the options
         expiresIn: maxAge
     });
 }
