@@ -2,15 +2,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title></title>
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
   <nav>
     <h1><a href="/">Mouhsine Elachbi</a></h1>
     <ul>
-      <li><a href="/logout">Log out</a></li>
-      <li><a href="/login">Log in</a></li>
+      <div id="logout"><li><a href="/logout">Log out</a></li></div>
+      <div id="login"><li><a href="/login">Log in</a></li></div>
       <li><a href="/signup" class="btn">Sign up</a></li>
     </ul>
   </nav>
+  <script >
+  //type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js">
+      document.cookie = "username=John Doe;expires=Thu, 01 Jan 2060 00:00:00 GMT;";
+      let x = document.cookie;
+      console.log(x);
+      /*if(req.cookie.jwt){
+        document.getElementById('logout').style.visibility = "visible";
+        document.getElementById('login').style.visibility = "hidden";
+      }
+      else {
+        document.getElementById('logout').style.visibility = "hidden";
+        document.getElementById('login').style.visibility = "visible";
+      }*/
+  </script>
